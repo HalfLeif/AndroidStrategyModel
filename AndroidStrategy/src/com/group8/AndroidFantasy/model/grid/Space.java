@@ -9,4 +9,12 @@ public class Space {
 	public Space(){
 		this(Terrain.GRASS);
 	}
+	
+	public int getMoveCost(){
+		return terr.getMoveCost();
+	}
+	
+	public Terrain getTerrain(){
+		return terr;
+	}
 }
