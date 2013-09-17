@@ -30,7 +30,15 @@ public class Path{
 		dirList = dirStack;
 	}
 	
-	public void track(){
-		
+	public List<Position> getPosList() {
+		return posList;
+	}
+
+	public List<Direction> getDirList() {
+		return dirList;
+	}
+
+	public int getTotalCost() {
+		return totalCost;
 	}
 }
