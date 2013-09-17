@@ -10,7 +10,7 @@ public class BoardTester {
 	private Board board;
 	
 	public BoardTester(){
-		board = Board.create(5, 3);
+		board = Board.create(8, 13);
 	}
 
 	public boolean execute(){
@@ -80,8 +80,9 @@ public class BoardTester {
 			}
 			
 			positionSet.add(p);
-			if(sparingly)
-				System.out.println("Visited ["+p.getX()+", "+p.getY()+"]");
+			if(sparingly){
+				//System.out.println("Visited ["+p.getX()+", "+p.getY()+"]");
+			}
 			
 			try {
 				if(sparingly){
