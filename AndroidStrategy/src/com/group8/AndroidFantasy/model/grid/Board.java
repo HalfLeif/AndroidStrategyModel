@@ -33,12 +33,10 @@ public class Board {
 	 * @param rows Number of rows used in the Coordinate System.
 	 * @param cols Number of columns used in the Coordinate System.
 	 */
-	public Board(int rows, int cols){
+	public Board(int rows, int cols) throws IllegalArgumentException{
 		
-		if(rows<2)
-			rows = 2;
-		if (cols<2)
-			cols = 2;
+		if(rows<2 || cols <2)
+			throw new IllegalArgumentException();
 		
 		this.rows=rows;
 		this.cols=cols;
@@ -55,10 +53,9 @@ public class Board {
 	 * 
 	 * @param maxHeight Maximum number of Hexes in one column. Not equal to number of "rows"!
 	 * @param maxWidth Maximum number of Hexes in one row.
-	 * @Param b Doesn't matter.
 	 */
-	public Board(int maxHeight, int maxWidth, boolean b){
-		this(2*maxHeight -1, maxWidth);
+	public static Board create(int maxHeight, int maxWidth) throws IllegalArgumentException{
+		return new Board(2*maxHeight -1, maxWidth);
 	}
 	
 

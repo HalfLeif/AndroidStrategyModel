@@ -10,7 +10,7 @@ public class BoardTester {
 	private Board board;
 	
 	public BoardTester(){
-		board = new Board(5, 3, true);
+		board = Board.create(5, 3);
 	}
 
 	public boolean execute(){
