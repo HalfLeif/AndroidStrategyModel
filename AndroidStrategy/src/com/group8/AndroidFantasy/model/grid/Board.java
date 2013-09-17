@@ -77,7 +77,7 @@ public class Board {
 	}
 	
 	/**
-	 * Can iterate from this Position through SOUTH and NORTHEAST to reach all Positions.
+	 * Can iterate from this Position through Directions SOUTH and NORTHEAST to reach all Positions.
 	 * 
 	 * @return Position in Northwest corner.
 	 */
@@ -98,7 +98,7 @@ public class Board {
 	}
 	
 	/**
-	 * Does this board hold such a Position? Is this coordinate valid on this very board?
+	 * Validates: Does this board hold such a Position? Is this coordinate valid on this very board?
 	 * 
 	 * @param x
 	 * @param y
@@ -113,16 +113,18 @@ public class Board {
 	 * @param p
 	 * @param direc
 	 * @return The Position in the given direction.
-	 * @throws DataFormatException
+	 * @throws DataFormatException if there is an unsupported Direction
 	 */
 	public Position getPositionTo(Position p, Direction direc) throws DataFormatException{
 		try {
 			int x = p.getX() + deltaX(direc);
 			int y = p.getY() + deltaY(direc);
+			
 			if(grid.isPositionValid(x, y)){
 				return grid.getPosition(x, y);
 			}
 			return null;
+			
 		} catch(ArrayIndexOutOfBoundsException e){
 			//TODO Log error!
 			e.printStackTrace(System.out);
