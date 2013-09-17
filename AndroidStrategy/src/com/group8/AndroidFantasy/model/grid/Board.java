@@ -13,7 +13,7 @@ public class Board {
 	private final int rows, cols;
 	
 	/**
-	 * 
+	 * Can be used for manual iterations.
 	 * @return Number of rows used in the Coordinate System.
 	 */
 	public int getRows() {
@@ -21,7 +21,7 @@ public class Board {
 	}
 
 	/**
-	 * 
+	 * Can be used for manual iterations.
 	 * @return Number of columns used in the Coordinate System.
 	 */
 	public int getCols() {
@@ -30,8 +30,12 @@ public class Board {
 
 	/**
 	 * 
+	 * For purposes of symmetry: an odd number of columns is recommended.
+	 * 
 	 * @param rows Number of rows used in the Coordinate System.
 	 * @param cols Number of columns used in the Coordinate System.
+	 * 
+	 * @throws IllegalArgumentException when rows<2 or cols<2 
 	 */
 	public Board(int rows, int cols) throws IllegalArgumentException{
 		
@@ -50,9 +54,12 @@ public class Board {
 	}
 	
 	/**
+	 * For purposes of symmetry: an odd number of columns is recommended.
 	 * 
 	 * @param maxHeight Maximum number of Hexes in one column. Not equal to number of "rows"!
 	 * @param maxWidth Maximum number of Hexes in one row.
+	 * 
+	 * @throws IllegalArgumentException when maxHeight<2 or maxWidth<2
 	 */
 	public static Board create(int maxHeight, int maxWidth) throws IllegalArgumentException{
 		return new Board(2*maxHeight -1, maxWidth);
