@@ -3,6 +3,7 @@ package com.group8.AndroidFantasy.model.grid.path;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
+import java.util.zip.DataFormatException;
 
 import com.group8.AndroidFantasy.model.grid.Board;
 import com.group8.AndroidFantasy.model.grid.Direction;
@@ -75,6 +76,7 @@ public class PathTester {
 		List<Direction> dirs = path.getDirList();
 		List<Position> poss = path.getPosList();
 		
+		/*
 		System.out.println();
 		System.out.println("Start: "+randStart.toString());
 		System.out.println("Target: "+randTarget.toString());
@@ -83,14 +85,29 @@ public class PathTester {
 		System.out.println("Poslist: "+poss.size());
 		
 		System.out.println();
+		*/
 		for(int i=0; i<poss.size();i++){
-			System.out.print(poss.get(i).toString());
+			Position p = poss.get(i);
+			
+			//System.out.print(p.toString());
 			if(i < dirs.size()){
-				System.out.print("\t\t"+ dirs.get(i).name());
+				Direction direc = dirs.get(i);
+				try {
+					Position next = board.getPositionTo(p, direc);
+					if(next != poss.get(i+1)){
+						System.out.println("Error: "+next.toString()+" != "+poss.get(i+1).toString());
+						return false;
+					}
+					
+				} catch (DataFormatException e) {
+					e.printStackTrace();
+				}
+				
+				//System.out.print("\t\t"+ direc.name());
 			}
-			System.out.println();
+			//System.out.println();
 		}
-		System.out.println("");
+		//System.out.println("");
 		
 		return true;
 	}
