@@ -86,10 +86,8 @@ public class BoardTester {
 			try {
 				if(sparingly){
 					queue.add(board.getPositionTo(p, Direction.SOUTH));
-					queue.add(board.getPositionTo(p, Direction.SOUTHEAST));
 					queue.add(board.getPositionTo(p, Direction.NORTHEAST));
 					
-					//queue.add(board.getPositionTo(p, Direction.NORTH));
 				} else {
 					for(Position neighbour : board.getPositionsSurrounding(p)){
 						queue.add(neighbour);

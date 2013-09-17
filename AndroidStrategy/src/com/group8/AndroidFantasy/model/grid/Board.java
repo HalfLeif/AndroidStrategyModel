@@ -73,7 +73,7 @@ public class Board {
 	}
 	
 	/**
-	 * Can iterate from this Position through SOUTH, SOUTHEAST and NORTHEAST to reach all Positions.
+	 * Can iterate from this Position through SOUTH and NORTHEAST to reach all Positions.
 	 * 
 	 * @return Position in Northwest corner.
 	 */
