@@ -16,12 +16,19 @@ public class HexGrid {
 			this.y=y;
 		}
 
+		@Override
 		public int getX() {
 			return x;
 		}
 
+		@Override
 		public int getY() {
 			return y;
+		}
+		
+		@Override
+		public String toString(){
+			return "["+x+", "+y+"]";
 		}
 		
 	}

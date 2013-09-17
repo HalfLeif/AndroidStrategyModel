@@ -20,6 +20,10 @@ class Node {
 		return from;
 	}
 
+	public Direction getFromPrevToMe() {
+		return fromPrevToMe;
+	}
+
 	public Position getMyPos() {
 		return myPos;
 	}

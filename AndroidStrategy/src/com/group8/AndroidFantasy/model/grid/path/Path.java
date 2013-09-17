@@ -1,7 +1,8 @@
 package com.group8.AndroidFantasy.model.grid.path;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
 
 import com.group8.AndroidFantasy.model.grid.Direction;
 import com.group8.AndroidFantasy.model.grid.Position;
@@ -15,19 +16,22 @@ public class Path{
 		
 		totalCost = targetNode.getTotalCost();
 		
-		Stack<Position> posStack = new Stack<Position>();
-		Stack<Direction> dirStack = new Stack<Direction>();
+		posList = new ArrayList<Position>();
+		dirList = new ArrayList<Direction>();
 		
 		Node iter = targetNode;
 		while(iter != null){
-			posStack.push(iter.getMyPos());
+			posList.add(iter.getMyPos());
 			
+			if(iter.getFrom()!=null){
+				dirList.add(iter.getFromPrevToMe());
+			}
 			
 			iter = iter.getFrom();
 		}
-		
-		posList = posStack;
-		dirList = dirStack;
+
+		Collections.reverse(dirList);
+		Collections.reverse(posList);
 	}
 	
 	public List<Position> getPosList() {
