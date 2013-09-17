@@ -34,8 +34,8 @@ public class HexGrid {
 		
 		for(int x = 0; x<rows; x++){
 			for(int y = 0; y<cols; y++){
-				int adX = adaptX(x);
-				int adY = adaptY(y);
+				int adX = adaptRow(x);
+				int adY = adaptCol(y);
 				if(isPositionValid(x, y)){
 					positions[adX][adY]= new PositionImpl(x,y);
 				}
@@ -56,19 +56,19 @@ public class HexGrid {
 		return list;
 	}
 	
-	public Position getPosition(int x, int y) throws ArrayIndexOutOfBoundsException{
-		int adX = adaptX(x);
-		int adY = adaptY(y);
+	public Position getPosition(int row, int col) throws ArrayIndexOutOfBoundsException{
+		int adX = adaptRow(row);
+		int adY = adaptCol(col);
 		
-		if(! isPositionValid(x, y)){
+		if(! isPositionValid(row, col)){
 			throw new ArrayIndexOutOfBoundsException();
 		}
 		//TODO return clone?
 		return positions[adX][adY];
 	}
 	
-	public boolean isPositionValid(int x, int y){
-		return isOuterPositionValid(x, y) && isInnerPositionValid(adaptX(x), adaptY(y));
+	public boolean isPositionValid(int row, int col){
+		return isOuterPositionValid(row, col) && isInnerPositionValid(adaptRow(row), adaptCol(col));
 	}
 	
 	private boolean isOuterPositionValid(int x, int y){
@@ -88,11 +88,11 @@ public class HexGrid {
 		return true;
 	}
 	
-	private int adaptX(int x){
+	private int adaptRow(int x){
 		return x/2;
 	}
 	
-	private int adaptY(int y){
+	private int adaptCol(int y){
 		return y;
 	}
 }
