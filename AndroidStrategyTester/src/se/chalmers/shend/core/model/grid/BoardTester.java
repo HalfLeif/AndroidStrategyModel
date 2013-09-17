@@ -1,9 +1,13 @@
-package com.group8.AndroidFantasy.model.grid;
+package se.chalmers.shend.core.model.grid;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+
+import se.chalmers.shend.core.model.grid.Board;
+import se.chalmers.shend.core.model.grid.Direction;
+import se.chalmers.shend.core.model.grid.Position;
 
 public class BoardTester {
 	

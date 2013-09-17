@@ -1,13 +1,15 @@
-package com.group8.AndroidFantasy.model.grid.path;
+package se.chalmers.shend.core.model.grid.path;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 import java.util.zip.DataFormatException;
 
-import com.group8.AndroidFantasy.model.grid.Board;
-import com.group8.AndroidFantasy.model.grid.Direction;
-import com.group8.AndroidFantasy.model.grid.Position;
+import se.chalmers.shend.core.model.grid.Board;
+import se.chalmers.shend.core.model.grid.Direction;
+import se.chalmers.shend.core.model.grid.Position;
+import se.chalmers.shend.core.model.grid.path.Path;
+import se.chalmers.shend.core.model.grid.path.Pathfinder;
 
 public class PathTester {
 	

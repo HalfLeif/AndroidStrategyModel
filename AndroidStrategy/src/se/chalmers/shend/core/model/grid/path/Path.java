@@ -1,11 +1,11 @@
-package com.group8.AndroidFantasy.model.grid.path;
+package se.chalmers.shend.core.model.grid.path;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import com.group8.AndroidFantasy.model.grid.Direction;
-import com.group8.AndroidFantasy.model.grid.Position;
+import se.chalmers.shend.core.model.grid.Direction;
+import se.chalmers.shend.core.model.grid.Position;
 
 public class Path{
 	private final List<Position> posList;

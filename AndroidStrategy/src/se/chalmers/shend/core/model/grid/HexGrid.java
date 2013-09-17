@@ -1,4 +1,4 @@
-package com.group8.AndroidFantasy.model.grid;
+package se.chalmers.shend.core.model.grid;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.group8.AndroidFantasy.model.grid;
+package se.chalmers.shend.core.model.grid;
 
 public class Space {
 	private final Terrain terr;

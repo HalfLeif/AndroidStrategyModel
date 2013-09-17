@@ -1,7 +1,7 @@
-package com.group8.AndroidFantasy;
+package se.chalmers.shend.core;
 
-import com.group8.AndroidFantasy.model.grid.BoardTester;
-import com.group8.AndroidFantasy.model.grid.path.PathTester;
+import se.chalmers.shend.core.model.grid.BoardTester;
+import se.chalmers.shend.core.model.grid.path.PathTester;
 
 public class TestMain {
 

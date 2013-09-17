@@ -1,7 +1,7 @@
-package com.group8.AndroidFantasy.model.grid.path;
+package se.chalmers.shend.core.model.grid.path;
 
-import com.group8.AndroidFantasy.model.grid.Direction;
-import com.group8.AndroidFantasy.model.grid.Position;
+import se.chalmers.shend.core.model.grid.Direction;
+import se.chalmers.shend.core.model.grid.Position;
 
 class Node {
 	private final Node from;
