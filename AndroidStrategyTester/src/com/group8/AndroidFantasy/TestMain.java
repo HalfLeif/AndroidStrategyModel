@@ -1,6 +1,7 @@
 package com.group8.AndroidFantasy;
 
 import com.group8.AndroidFantasy.model.grid.BoardTester;
+import com.group8.AndroidFantasy.model.grid.path.PathTester;
 
 public class TestMain {
 
@@ -19,6 +20,12 @@ public class TestMain {
 			return;
 		}
 		
+		if(!testPath()){
+			works = false;
+			System.out.println("Error in testing Path...");
+			return;
+		}
+		
 		if(works){
 			System.out.println("Test finished with no errors.");
 		}
@@ -29,6 +36,10 @@ public class TestMain {
 	 */
 	private static boolean testBoard(){
 		return new BoardTester().execute();
+	}
+	
+	private static boolean testPath(){
+		return new PathTester().execute();
 	}
 
 }

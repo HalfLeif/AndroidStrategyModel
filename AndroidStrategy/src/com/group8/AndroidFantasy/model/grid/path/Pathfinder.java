@@ -55,6 +55,9 @@ public class Pathfinder {
 				Position newp;
 				try {
 					newp = board.getPositionTo(ip, direc);
+					if(newp==null){
+						continue;
+					}
 				} catch (DataFormatException e) {
 					//TODO Log exc
 					System.out.println("Exception: Unsupported direction: "+direc.name());

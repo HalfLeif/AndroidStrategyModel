@@ -105,10 +105,11 @@ public class BoardTester {
 		int setSize = positionSet.size();
 		int boardSize = board.getAllPositions().size();
 		
-		System.out.println();
+		/*System.out.println();
 		System.out.println("Sparingly: "+sparingly);
 		System.out.println("Set: "+setSize);
 		System.out.println("Board: "+boardSize);
+		*/
 		
 		
 		if(setSize!=boardSize){
