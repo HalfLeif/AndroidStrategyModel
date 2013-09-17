@@ -1,5 +1,6 @@
 package com.group8.AndroidFantasy.model.grid.path;
 
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
@@ -68,9 +69,21 @@ public class Pathfinder {
 				queue.add(new Node(n, direc, newp, newMoveCost));
 			}
 		}
+		
+
+		if( !nodeMap.containsKey(startPos) || nodeMap.get(startPos).getTotalCost()!=0){
+			throw new IllegalStateException();
+		}
 	}
 	
-	public Path walkTo(Position target)
+	/**
+	 * Requires path to be generated first with "generatePathsFrom(...)"
+	 * @param target
+	 * @return
+	 * @throws IllegalArgumentException if target Position is not in walking range.
+	 * @throws NullPointerException if paths are not generated with "generatePathsFrom(...)" 
+	 */
+	public Path getPathTo(Position target)
 			throws IllegalArgumentException, NullPointerException{
 		
 		if(nodeMap==null){
@@ -81,13 +94,22 @@ public class Pathfinder {
 			throw new IllegalArgumentException();
 		}
 		
-		if( !nodeMap.containsKey(startPos) || nodeMap.get(startPos).getTotalCost()!=0){
-			throw new IllegalStateException();
-		}
-		
 		Node targetNode = nodeMap.get(target);
 		
 		return new Path(targetNode);
+	}
+	
+	/**
+	 * Requires paths to be generated first with "generatePathsFrom(...)"
+	 * 
+	 * @return positions within walking range, as specified in "generatePathsFrom(...)".
+	 * @throws NullPointerException if Paths are not generated
+	 */
+	public Collection<Position> getPositionsInRange() throws NullPointerException{
+		if(nodeMap==null){
+			throw new NullPointerException();
+		}
+		return nodeMap.keySet();
 	}
 	
 	
